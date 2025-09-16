@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - JharkhandConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl bg-white rounded-2xl shadow-xl flex flex-col">
+        <div class="p-4 border-b flex items-center space-x-3 bg-green-600 text-white rounded-t-2xl">
+            <i class="fas fa-robot text-2xl"></i>
+            <div>
+                <h1 class="text-xl font-bold">Jharv.AI Assistant</h1>
+                <p class="text-sm opacity-90">Your personal guide to Jharkhand</p>
+            </div>
+        </div>
+
+        <div class="flex-1 p-6 space-y-4 overflow-y-auto h-96">
+            <div class="flex items-start gap-3">
+                <div class="bg-gray-200 text-gray-500 p-2 rounded-full"><i class="fas fa-robot"></i></div>
+                <div class="bg-gray-200 p-3 rounded-lg max-w-xs">
+                    <p>Hello! How can I help you plan your perfect trip to Jharkhand today?</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 justify-end">
+                <div class="bg-green-600 text-white p-3 rounded-lg max-w-xs">
+                    <p>What are the best waterfalls to visit in September?</p>
+                </div>
+                <div class="bg-green-600 text-white p-2 rounded-full"><i class="fas fa-user"></i></div>
+            </div>
+             <div class="flex items-start gap-3">
+                <div class="bg-gray-200 text-gray-500 p-2 rounded-full"><i class="fas fa-robot"></i></div>
+                <div class="bg-gray-200 p-3 rounded-lg max-w-xs">
+                    <p>Great question! In September, Hundru Falls and Jonha Falls are spectacular due to the monsoon season.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 border-t flex items-center space-x-2">
+            <input type="text" placeholder="Type your message..." class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button class="bg-green-600 text-white rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center hover:bg-green-700">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <a href="../index.html" class="mt-6 text-green-600 hover:underline">← Back to Home</a>
+</body>
+</html>
