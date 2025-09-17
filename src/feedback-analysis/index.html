@@ -6,36 +6,118 @@
     <title>AI-Driven Improvement - JharkhandConnect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-100 p-8">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
             <i class="fas fa-brain text-5xl text-green-600 mb-4"></i>
             <h1 class="text-4xl font-bold text-gray-800">AI-Driven Improvement</h1>
             <p class="text-gray-600 mt-2">Analyzing feedback to enhance the tourist experience.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                <h2 class="text-2xl font-semibold text-gray-700 mb-4 text-center">Live Sentiment</h2>
-                <img src="https://i.ibb.co/R0tVp45/pie-chart.png" alt="Pie Chart of sentiment" class="mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 text-center">Live Tourist Sentiment</h2>
+            <div class="max-w-sm mx-auto h-64">
+                <canvas id="sentimentChart"></canvas>
             </div>
+        </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg">
-                 <h2 class="text-2xl font-semibold text-gray-700 mb-4">Key Topics from Feedback</h2>
-                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Amazing Scenery</span>
-                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full">Lack of Signage</span>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Helpful Guides</span>
-                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Hotel Prices</span>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">Cleanliness</span>
-                 </div>
+        <div>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Actionable Insights Report</h2>
+            <div class="space-y-8">
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">✅ Positive Highlights</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="font-bold text-green-700">High Sentiment for "Scenery" at Netarhat</p>
+                            <p class="text-sm text-gray-500 mt-2 italic">"The sunrise view from Netarhat was absolutely breathtaking!"</p>
+                            <p class="mt-3 text-gray-700"><strong class="font-semibold">Suggestion:</strong> Use phrases like "breathtaking sunrise" in marketing campaigns.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="font-bold text-green-700">Positive Association: "Guides" & "Betla National Park"</p>
+                            <p class="text-sm text-gray-500 mt-2 italic">"Our safari guide at Betla was incredibly knowledgeable and made the trip special."</p>
+                            <p class="mt-3 text-gray-700"><strong class="font-semibold">Suggestion:</strong> Feature expert local guides in promotional videos to build trust.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">⚠️ Areas for Improvement</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="font-bold text-red-700">Negative Topic: "Restroom Cleanliness" at Dassam Falls</p>
+                            <p class="text-sm text-gray-500 mt-2 italic">"Beautiful waterfall, but the public restrooms were unusable."</p>
+                            <p class="mt-3 text-gray-700"><strong class="font-semibold">Suggestion:</strong> Dispatch maintenance to improve and regularly service facilities at Dassam Falls.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="font-bold text-red-700">High Negative Sentiment on "Signage" near Jonha Falls</p>
+                            <p class="text-sm text-gray-500 mt-2 italic">"Got lost for 30 minutes, the signs are confusing and faded."</p>
+                            <p class="mt-3 text-gray-700"><strong class="font-semibold">Suggestion:</strong> Install new, clear, and multilingual signposts on approach roads.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">📈 Emerging Trend</h3>
+                    <div class="grid grid-cols-1">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="font-bold text-blue-700">Increase in Queries for "Sustainable Travel"</p>
+                            <p class="text-sm text-gray-500 mt-2 italic">"Are there any eco-friendly homestays near Ranchi? Looking for responsible tour operators."</p>
+                            <p class="mt-3 text-gray-700"><strong class="font-semibold">Suggestion:</strong> Develop and promote an "Eco-Conscious Travel" section on the main website.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <div class="text-center">
-            <a href="/index.html" class="mt-12 inline-block text-green-600 hover:underline">← Back to Home</a>
+            <a href="../../index.html" class="mt-12 inline-block text-green-600 hover:underline">← Back to Home</a>
         </div>
     </div>
+
+    <script>
+        const ctx = document.getElementById('sentimentChart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Positive', 'Negative', 'Neutral'],
+                datasets: [{
+                    label: 'Sentiment',
+                    data: [72, 18, 10], // Example data: 72% Positive, 18% Negative, 10% Neutral
+                    backgroundColor: [
+                        'rgba(34, 197, 94, 0.7)',  // Green
+                        'rgba(239, 68, 68, 0.7)',  // Red
+                        'rgba(156, 163, 175, 0.7)' // Gray
+                    ],
+                    borderColor: [
+                        'rgba(22, 163, 74, 1)',
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(107, 114, 128, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
