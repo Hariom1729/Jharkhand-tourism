@@ -6,31 +6,13 @@
     <title>Jharkhand Tourism - A New Era of Exploration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #f7fafc; }
-        .marquee-text {
-          color: rgb(50, 148, 4);
-          display: inline-block;
-          white-space: nowrap;
-          padding-left: 100%;
-          margin-bottom: 20px;
-          font-size: 25px;
-          animation: scroll-left 20s linear infinite;
-        }
-        .marquee-container:hover .marquee-text {
-          animation-play-state: paused;
-        }
-        @keyframes scroll-left {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-100%); }
-        }
-    </style>
+    <style src="style.css"></style>
 </head>
 <body class="bg-gray-50 font-sans">
 
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">JharkhandConnect</a>
+            <a href="#" class="text-2xl font-bold text-gray-800">Jharkhand Connect</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#tourist" class="text-gray-600 hover:text-green-600">For Tourists</a>
                 <a href="#community" class="text-gray-600 hover:text-green-600">For Community</a>
@@ -67,7 +49,7 @@
     <main class="container mx-auto px-6 py-16">
 
         <section id="tourist" class="mb-20">
-            <div class="marquee-container">
+            <div class="marquee-container overflow-hidden">
                 <p class="marquee-text">Discover Jharkhand's hidden gems, from breathtaking waterfalls to ancient temples. Your next adventure awaits!</p>
             </div>
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">A Seamless & Immersive Journey for Tourists ✈️</h2>
@@ -194,21 +176,19 @@
         </div>
     </footer>
 
-    <button id="chat-toggle" class="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+    <button id="chat-toggle" class="fixed bottom-6 right-6 bg-green-600 text-white rounded-full p-4 shadow-lg hover:bg-green-700 transition-transform transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path></svg>
     </button>
-
+    
     <div id="chat-widget" class="fixed bottom-24 right-6 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 hidden flex-col transition-all duration-300 transform origin-bottom-right h-[500px]">
-        
-        <div class="bg-blue-600 text-white p-4 rounded-t-2xl flex justify-between items-center flex-shrink-0">
+        <div class="bg-green-600 text-white p-4 rounded-t-2xl flex justify-between items-center flex-shrink-0">
             <h3 class="font-semibold text-lg">Travel Assistant</h3>
             <button id="chat-close" class="text-white hover:text-gray-200 text-2xl leading-none">&times;</button>
         </div>
-        
         <div id="chat-container" class="flex-1 p-4 overflow-y-auto">
             <div class="flex items-start gap-2.5 mb-4">
-                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600"><path d="M12.57 2.43A14.5 14.5 0 0 1 21.5 14.2c0 8.07-10.09 9.38-11.23 2.16a12.5 12.5 0 0 1 10.46-15.06Z"/><path d="M12.57 2.43A14.5 14.5 0 0 0 3.5 14.2c0 8.07 10.09 9.38 11.23 2.16A12.5 12.5 0 0 0 4.27 1.11Z"/></svg>
+                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-600"><path d="M12.57 2.43A14.5 14.5 0 0 1 21.5 14.2c0 8.07-10.09 9.38-11.23 2.16a12.5 12.5 0 0 1 10.46-15.06Z"/><path d="M12.57 2.43A14.5 14.5 0 0 0 3.5 14.2c0 8.07 10.09 9.38 11.23 2.16A12.5 12.5 0 0 0 4.27 1.11Z"/></svg>
                 </div>
                 <div class="flex flex-col gap-1 w-full max-w-[320px]">
                     <div class="leading-1.5 p-3 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl">
@@ -217,15 +197,13 @@
                 </div>
             </div>
         </div>
-        
         <div id="chat-loading" class="px-4 pb-2 text-sm text-gray-500 hidden flex-shrink-0">
             <span class="italic">Assistant is typing...</span>
         </div>
-        
         <div class="p-4 border-t border-gray-200 flex-shrink-0">
             <form id="chat-form" class="flex items-center">
-                <input type="text" id="chat-input" class="w-full bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:ring-blue-500 focus:border-blue-500" placeholder="Ask a question..." autocomplete="off">
-                <button type="submit" class="ml-3 bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <input type="text" id="chat-input" class="w-full bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:ring-green-500 focus:border-green-500" placeholder="Ask a question..." autocomplete="off">
+                <button type="submit" class="ml-3 bg-green-600 text-white rounded-full p-2 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
             </form>
