@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- API Configuration (Client-Side Backend) ---
     // IMPORTANT: Replace "YOUR_API_KEY_HERE" with your actual Google AI API key.
     // You can get a free key from https://aistudio.google.com/app/apikey
-    const API_KEY = "AIzaSyCR4osy5CHCoE6rjVWT-h6ZV84IISVFcmc"; 
+    const API_KEY = "AIzaSyBAliZrBecOBEh2HhVXUHiQJzpI88JobvA"; 
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
     
     // --- Itinerary Generation Logic ---
