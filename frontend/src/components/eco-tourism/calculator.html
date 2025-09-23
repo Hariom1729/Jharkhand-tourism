@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator - JharkhandConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-2xl w-full">
+        <div class="text-center mb-8">
+            <i class="fas fa-calculator text-5xl text-green-600 mb-4"></i>
+            <h1 class="text-4xl font-bold text-gray-800">Travel Carbon Footprint Calculator</h1>
+            <p class="text-gray-600 mt-2">Estimate the environmental impact of your trip to Jharkhand.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <form id="calculator-form" class="space-y-6">
+                <div>
+                    <label for="transport-mode" class="block text-sm font-medium text-gray-700">Primary Mode of Transport</label>
+                    <select id="transport-mode" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        <option value="car">Car (Petrol)</option>
+                        <option value="train">Train</option>
+                        <option value="bus">Bus</option>
+                        <option value="flight">Flight (Short-haul)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="distance" class="block text-sm font-medium text-gray-700">Total Distance (round trip, in km)</label>
+                    <input type="number" id="distance" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" placeholder="e.g., 500" required>
+                </div>
+
+                <div>
+                    <label for="nights" class="block text-sm font-medium text-gray-700">Number of Nights Stayed</label>
+                    <input type="number" id="nights" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" placeholder="e.g., 3" required>
+                </div>
+                 <div>
+                    <label for="hotel-type" class="block text-sm font-medium text-gray-700">Accommodation Type</label>
+                    <select id="hotel-type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                        <option value="budget">Budget Hotel / Homestay</option>
+                        <option value="mid-range">Mid-range Hotel</option>
+                        <option value="luxury">Luxury Hotel</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-green-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 flex items-center justify-center">
+                    Calculate Footprint
+                </button>
+            </form>
+        </div>
+
+        <div id="result-display" class="mt-8 bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg hidden">
+            <h2 class="text-2xl font-bold text-gray-800">Your Estimated Carbon Footprint:</h2>
+            <p class="text-4xl font-bold text-green-600 my-2"><span id="carbon-output">0.00</span> kg CO₂</p>
+            <p class="text-gray-600">This is equivalent to the carbon absorbed by <strong id="trees-equivalent">0</strong> trees in a year.</p>
+            <div id="offset-tips" class="mt-4 border-t pt-4">
+                <h3 class="font-semibold text-gray-700">Tips to Offset Your Footprint:</h3>
+                <ul id="tips-list" class="list-disc list-inside text-gray-600 mt-2">
+                    </ul>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="index.html" class="mt-8 inline-block text-green-600 hover:underline">← Back to Sustainable Practices</a>
+        </div>
+    </div>
+    
+    <script src="calculator.js"></script>
+</body>
+</html>

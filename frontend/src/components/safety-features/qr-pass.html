@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal QR Pass - JharkhandConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="max-w-md w-full">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <div class="bg-green-600 text-white p-4 flex items-center space-x-3">
+                <i class="fas fa-shield-alt text-2xl"></i>
+                <h1 class="text-xl font-bold">JharkhandConnect Universal Pass</h1>
+            </div>
+
+            <div class="p-8 text-center">
+                <img src="a.png" alt="QR Code" class="mx-auto border-8 border-gray-200 p-2 rounded-2xl">
+                
+                <h2 class="text-2xl font-semibold text-gray-800 mt-6">Hariom Yadav</h2>
+                <p class="text-gray-500">JC-ID: 12345-67890</p>
+
+                <div class="mt-4 bg-green-100 text-green-800 text-sm font-semibold inline-flex items-center px-3 py-1 rounded-full">
+                    <span class="w-2 h-2 mr-2 bg-green-500 rounded-full"></span>
+                    Status: Active
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 border-t text-center">
+                <p class="text-sm text-gray-600">This pass is valid. Current time:</p>
+                <p id="current-time" class="font-mono font-semibold text-gray-800"></p>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="index.html" class="text-green-600 hover:underline">← Back to Convenience & Safety</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the real-time clock
+        const timeElement = document.getElementById('current-time');
+        function updateTime() {
+            const now = new Date();
+            timeElement.textContent = now.toLocaleString('en-IN', {
+                dateStyle: 'medium',
+                timeStyle: 'medium'
+            });
+        }
+        setInterval(updateTime, 1000); // Update every second
+        updateTime(); // Initial call
+    </script>
+</body>
+</html>
