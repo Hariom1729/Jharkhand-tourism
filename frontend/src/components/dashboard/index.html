@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body class="bg-gray-100 p-8">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -17,10 +19,22 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 text-center">
-            <div class="bg-white p-6 rounded-xl shadow-lg"><p class="text-sm text-gray-500">Total Visitors</p><p class="text-3xl font-bold">462,500</p></div>
-            <div class="bg-white p-6 rounded-xl shadow-lg"><p class="text-sm text-gray-500">Total Revenue</p><p class="text-3xl font-bold">₹25 Cr</p></div>
-            <div class="bg-white p-6 rounded-xl shadow-lg"><p class="text-sm text-gray-500">Avg. Stay</p><p class="text-3xl font-bold">3.4 Days</p></div>
-            <div class="bg-white p-6 rounded-xl shadow-lg"><p class="text-sm text-gray-500">Satisfaction</p><p class="text-3xl font-bold">4.2/5.0</p></div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-sm text-gray-500">Total Visitors</p>
+                <p class="text-3xl font-bold">462,500</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-sm text-gray-500">Total Revenue</p>
+                <p class="text-3xl font-bold">₹25 Cr</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-sm text-gray-500">Avg. Stay</p>
+                <p class="text-3xl font-bold">3.4 Days</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-sm text-gray-500">Satisfaction</p>
+                <p class="text-3xl font-bold">4.2/5.0</p>
+            </div>
         </div>
 
         <div class="grid lg:grid-cols-5 gap-6">
@@ -30,7 +44,7 @@
                     <canvas id="footfallChart"></canvas>
                 </div>
             </div>
-             
+
             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="font-semibold mb-4">Visitor Demographics</h3>
                 <div class="space-y-4">
@@ -53,9 +67,9 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="text-center">
-            <a href="../../index.html" class="mt-12 inline-block text-green-600 hover:underline">← Back to Home</a>
+            <a href="../../../index.html" class="mt-12 inline-block text-green-600 hover:underline">← Back to Home</a>
         </div>
     </div>
 
@@ -83,7 +97,7 @@
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(context) {
+                            label: function (context) {
                                 return ` Visitors: ${context.raw.toLocaleString('en-IN')}`;
                             }
                         }
@@ -94,7 +108,7 @@
                         beginAtZero: true,
                         ticks: {
                             // Formats the y-axis labels (e.g., 100k)
-                            callback: function(value, index, values) {
+                            callback: function (value, index, values) {
                                 if (value >= 1000) {
                                     return (value / 1000) + 'k';
                                 }
@@ -107,4 +121,5 @@
         });
     </script>
 </body>
+
 </html>
